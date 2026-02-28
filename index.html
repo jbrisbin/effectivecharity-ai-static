@@ -7,14 +7,17 @@
     <title>effectivecharity.ai labs</title>
     <meta name="description"
         content="effectivecharity.ai labs - Advancing charitable impact through artificial intelligence research and development.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
         :root {
-            --color-primary: #1a1a2e;
-            --color-secondary: #16213e;
-            --color-accent: #0f3460;
-            --color-highlight: #e94560;
-            --color-text: #eaeaea;
-            --color-text-muted: #a0a0a0;
+            --color-bg: #f8f7f5;
+            --color-surface: #ffffff;
+            --color-text: #111111;
+            --color-text-muted: #666666;
+            --color-border: #e2e0dc;
+            --color-accent: #111111;
         }
 
         * {
@@ -28,30 +31,30 @@
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--color-bg);
             color: var(--color-text);
             min-height: 100vh;
             line-height: 1.6;
+            font-weight: 400;
         }
 
         .container {
-            max-width: 1200px;
+            max-width: 1080px;
             margin: 0 auto;
-            padding: 0 2rem;
+            padding: 0 2.5rem;
         }
 
         /* Header */
         header {
-            padding: 1.5rem 0;
+            padding: 1.75rem 0;
             position: fixed;
             top: 0;
             left: 0;
             right: 0;
-            background: rgba(26, 26, 46, 0.95);
-            backdrop-filter: blur(10px);
+            background: var(--color-bg);
             z-index: 100;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            border-bottom: 1px solid var(--color-border);
         }
 
         .header-content {
@@ -61,27 +64,30 @@
         }
 
         .logo {
-            font-size: 1.5rem;
-            font-weight: 700;
+            font-size: 1rem;
+            font-weight: 600;
             color: var(--color-text);
             text-decoration: none;
-            letter-spacing: -0.5px;
+            letter-spacing: -0.2px;
         }
 
         .logo span {
-            color: var(--color-highlight);
+            font-weight: 300;
+            color: var(--color-text-muted);
         }
 
         nav a {
             color: var(--color-text-muted);
             text-decoration: none;
-            margin-left: 2rem;
-            font-size: 0.95rem;
-            transition: color 0.3s ease;
+            margin-left: 2.5rem;
+            font-size: 0.875rem;
+            font-weight: 400;
+            letter-spacing: 0.02em;
+            transition: color 0.2s;
         }
 
         nav a:hover {
-            color: var(--color-highlight);
+            color: var(--color-text);
         }
 
         /* Hero Section */
@@ -89,212 +95,239 @@
             min-height: 100vh;
             display: flex;
             align-items: center;
-            justify-content: center;
-            text-align: center;
             padding-top: 80px;
+            background: var(--color-surface);
+            border-bottom: 1px solid var(--color-border);
         }
 
         .hero-content {
-            max-width: 800px;
+            max-width: 680px;
+        }
+
+        .hero-eyebrow {
+            font-size: 0.8rem;
+            font-weight: 500;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--color-text-muted);
+            margin-bottom: 2rem;
         }
 
         .hero h1 {
-            font-size: clamp(2.5rem, 6vw, 4rem);
-            font-weight: 700;
-            margin-bottom: 1.5rem;
-            letter-spacing: -1px;
+            font-size: clamp(2.25rem, 5vw, 3.5rem);
+            font-weight: 300;
+            margin-bottom: 2rem;
+            letter-spacing: -1.5px;
             line-height: 1.1;
+            color: var(--color-text);
         }
 
-        .hero h1 span {
-            color: var(--color-highlight);
+        .hero h1 strong {
+            font-weight: 600;
         }
 
         .hero p {
-            font-size: 1.25rem;
+            font-size: 1.1rem;
             color: var(--color-text-muted);
-            margin-bottom: 2.5rem;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
+            margin-bottom: 3rem;
+            max-width: 520px;
+            line-height: 1.7;
+            font-weight: 300;
         }
 
         .cta-button {
             display: inline-block;
-            padding: 1rem 2.5rem;
-            background: var(--color-highlight);
-            color: white;
+            padding: 0.875rem 2rem;
+            background: var(--color-text);
+            color: var(--color-surface);
             text-decoration: none;
-            border-radius: 4px;
-            font-weight: 600;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            font-size: 0.875rem;
+            font-weight: 500;
+            letter-spacing: 0.04em;
+            transition: opacity 0.2s;
         }
 
         .cta-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(233, 69, 96, 0.3);
+            opacity: 0.75;
         }
 
-        /* Mission Section */
+        /* Sections */
         .section {
-            padding: 6rem 0;
+            padding: 8rem 0;
+        }
+
+        .section-label {
+            font-size: 0.75rem;
+            font-weight: 500;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--color-text-muted);
+            margin-bottom: 3rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid var(--color-border);
         }
 
         .section-title {
             font-size: 2rem;
+            font-weight: 300;
+            letter-spacing: -0.75px;
             margin-bottom: 1rem;
-            text-align: center;
+            line-height: 1.2;
         }
 
         .section-subtitle {
             color: var(--color-text-muted);
-            text-align: center;
-            max-width: 600px;
-            margin: 0 auto 3rem;
+            max-width: 520px;
+            margin-bottom: 5rem;
+            line-height: 1.7;
+            font-weight: 300;
         }
 
         /* Features Grid */
         .features {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0;
+            border-top: 1px solid var(--color-border);
+            border-left: 1px solid var(--color-border);
         }
 
         .feature-card {
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            border-radius: 8px;
-            padding: 2rem;
-            transition: transform 0.3s ease, border-color 0.3s ease;
+            padding: 2.5rem;
+            border-right: 1px solid var(--color-border);
+            border-bottom: 1px solid var(--color-border);
+            background: var(--color-surface);
         }
 
-        .feature-card:hover {
-            transform: translateY(-5px);
-            border-color: var(--color-highlight);
-        }
-
-        .feature-icon {
-            width: 48px;
-            height: 48px;
-            background: var(--color-accent);
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 1.5rem;
-            font-size: 1.5rem;
+        .feature-number {
+            font-size: 0.75rem;
+            font-weight: 500;
+            letter-spacing: 0.1em;
+            color: var(--color-text-muted);
+            margin-bottom: 2rem;
         }
 
         .feature-card h3 {
-            font-size: 1.25rem;
-            margin-bottom: 0.75rem;
+            font-size: 1.1rem;
+            font-weight: 500;
+            margin-bottom: 1rem;
+            letter-spacing: -0.2px;
         }
 
         .feature-card p {
             color: var(--color-text-muted);
-            font-size: 0.95rem;
+            font-size: 0.9rem;
+            line-height: 1.7;
+            font-weight: 300;
         }
 
         /* About Section */
         #about {
-            background: rgba(255, 255, 255, 0.02);
+            background: var(--color-surface);
+            border-top: 1px solid var(--color-border);
+            border-bottom: 1px solid var(--color-border);
         }
 
         .about-content {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
-        }
-
-        @media (max-width: 768px) {
-            .about-content {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
+            gap: 6rem;
+            align-items: start;
         }
 
         .about-text p {
             color: var(--color-text-muted);
             margin-bottom: 1.5rem;
+            line-height: 1.8;
+            font-weight: 300;
+            font-size: 0.95rem;
         }
 
         .stats {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 2rem;
+            gap: 0;
+            border-top: 1px solid var(--color-border);
+            border-left: 1px solid var(--color-border);
         }
 
         .stat {
-            text-align: center;
-            padding: 1.5rem;
-            background: rgba(255, 255, 255, 0.03);
-            border-radius: 8px;
+            padding: 2rem;
+            border-right: 1px solid var(--color-border);
+            border-bottom: 1px solid var(--color-border);
         }
 
         .stat-number {
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: var(--color-highlight);
+            font-size: 1.75rem;
+            font-weight: 300;
+            letter-spacing: -0.5px;
+            color: var(--color-text);
+            margin-bottom: 0.4rem;
         }
 
         .stat-label {
             color: var(--color-text-muted);
-            font-size: 0.9rem;
-            margin-top: 0.5rem;
+            font-size: 0.8rem;
+            font-weight: 400;
+            letter-spacing: 0.03em;
         }
 
         /* Contact Section */
         #contact {
-            text-align: center;
+            text-align: left;
         }
 
         .contact-email {
             display: inline-block;
-            margin-top: 1rem;
-            font-size: 1.25rem;
-            color: var(--color-highlight);
+            margin-top: 0.5rem;
+            font-size: 1.5rem;
+            font-weight: 300;
+            color: var(--color-text);
             text-decoration: none;
-            border-bottom: 2px solid transparent;
-            transition: border-color 0.3s ease;
+            letter-spacing: -0.5px;
+            border-bottom: 1px solid var(--color-text);
+            transition: opacity 0.2s;
         }
 
         .contact-email:hover {
-            border-bottom-color: var(--color-highlight);
+            opacity: 0.5;
         }
 
         /* Footer */
         footer {
-            padding: 2rem 0;
-            text-align: center;
-            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 2.5rem 0;
+            border-top: 1px solid var(--color-border);
+            background: var(--color-bg);
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
 
         footer p {
             color: var(--color-text-muted);
-            font-size: 0.9rem;
+            font-size: 0.8rem;
+            font-weight: 300;
         }
 
         /* Animations */
         @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            from { opacity: 0; transform: translateY(12px); }
+            to   { opacity: 1; transform: translateY(0); }
         }
 
         .hero-content {
-            animation: fadeIn 1s ease-out;
+            animation: fadeIn 0.8s ease-out;
         }
 
         /* Mobile Responsive */
         @media (max-width: 768px) {
+            .container {
+                padding: 0 1.5rem;
+            }
+
             .header-content {
                 flex-direction: column;
                 gap: 1rem;
@@ -304,20 +337,23 @@
                 margin: 0 1rem;
             }
 
-            .hero h1 {
-                font-size: 2rem;
-            }
-
-            .hero p {
-                font-size: 1rem;
-            }
-
             .features {
                 grid-template-columns: 1fr;
             }
 
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
             .stats {
                 grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                gap: 0.5rem;
+                text-align: center;
             }
         }
     </style>
@@ -326,7 +362,7 @@
 <body>
     <header>
         <div class="container header-content">
-            <a href="#" class="logo">effectivecharity<span>.ai</span> labs</a>
+            <a href="#" class="logo">effectivecharity.ai <span>labs</span></a>
             <nav>
                 <a href="#mission">Mission</a>
                 <a href="#about">About</a>
@@ -337,39 +373,37 @@
 
     <main>
         <section class="hero">
-            <div class="container hero-content">
-                <h1>Amplifying <span>Impact</span> Through Intelligence</h1>
-                <p>We build AI tools and conduct research to help charitable organizations maximize their positive
-                    impact on the world.</p>
-                <a href="#contact" class="cta-button">Get in Touch</a>
+            <div class="container">
+                <div class="hero-content">
+                    <p class="hero-eyebrow">AI Research &amp; Development</p>
+                    <h1>Amplifying <strong>Impact</strong><br>Through Intelligence</h1>
+                    <p>We build AI tools and conduct research to help charitable organizations maximize their positive impact on the world.</p>
+                    <a href="#contact" class="cta-button">Get in Touch</a>
+                </div>
             </div>
         </section>
 
         <section id="mission" class="section">
             <div class="container">
-                <h2 class="section-title">Our Focus Areas</h2>
-                <p class="section-subtitle">Leveraging artificial intelligence to solve the most pressing challenges in
-                    effective philanthropy.</p>
+                <p class="section-label">Our Focus Areas</p>
+                <h2 class="section-title">Leveraging AI for effective philanthropy</h2>
+                <p class="section-subtitle">Applying artificial intelligence to solve the most pressing challenges in charitable giving and impact measurement.</p>
 
                 <div class="features">
                     <div class="feature-card">
-                        <div class="feature-icon">&#x1F4CA;</div>
+                        <p class="feature-number">01</p>
                         <h3>Impact Analysis</h3>
-                        <p>Advanced analytics to measure and predict the real-world outcomes of charitable
-                            interventions.</p>
+                        <p>Advanced analytics to measure and predict the real-world outcomes of charitable interventions.</p>
                     </div>
                     <div class="feature-card">
-                        <div class="feature-icon">&#x1F50D;</div>
+                        <p class="feature-number">02</p>
                         <h3>Opportunity Discovery</h3>
-                        <p>AI-powered identification of high-impact giving opportunities that might otherwise be
-                            overlooked.</p>
+                        <p>AI-powered identification of high-impact giving opportunities that might otherwise be overlooked.</p>
                     </div>
                     <div class="feature-card">
-                        <div class="feature-icon">&#x1F4B0;</div>
+                        <p class="feature-number">03</p>
                         <h3>Resource Optimization</h3>
-                        <p>Tools to help nonprofits and religious organizations intelligently plan and efficiently
-                            allocate
-                            resources where they can do the most good.</p>
+                        <p>Tools to help nonprofits and religious organizations intelligently plan and efficiently allocate resources where they can do the most good.</p>
                     </div>
                 </div>
             </div>
@@ -377,16 +411,13 @@
 
         <section id="about" class="section">
             <div class="container">
+                <p class="section-label">About</p>
                 <div class="about-content">
                     <div class="about-text">
-                        <h2 class="section-title" style="text-align: left;">About the effectivecharity.ai labs</h2>
-                        <p>effectivecharity.ai labs is a research initiative dedicated to applying cutting-edge
-                            artificial intelligence to the challenge of doing good better.</p>
-                        <p>We believe that thoughtful application of AI can help charitable organizations and individual
-                            donors make more informed decisions, ultimately leading to greater positive impact in the
-                            world.</p>
-                        <p>Our work spans research, tool development, and collaboration with leading organizations in
-                            the effective charity and philanthropy spaces.</p>
+                        <h2 class="section-title">effectivecharity.ai labs</h2>
+                        <p>A research initiative dedicated to applying cutting-edge artificial intelligence to the challenge of doing good better.</p>
+                        <p>We believe that thoughtful application of AI can help charitable organizations and individual donors make more informed decisions, ultimately leading to greater positive impact in the world.</p>
+                        <p>Our work spans research, tool development, and collaboration with leading organizations in the effective charity and philanthropy spaces.</p>
                     </div>
                     <div class="stats">
                         <div class="stat">
@@ -408,6 +439,7 @@
 
         <section id="contact" class="section">
             <div class="container">
+                <p class="section-label">Contact</p>
                 <h2 class="section-title">Get in Touch</h2>
                 <p class="section-subtitle">Interested in collaborating or learning more about our work?</p>
                 <a href="mailto:labs@effectivecharity.ai" class="contact-email">labs@effectivecharity.ai</a>
@@ -416,8 +448,9 @@
     </main>
 
     <footer>
-        <div class="container">
-            <p>&copy; 2026 effectivecharity.ai labs. Building tools for a better world.</p>
+        <div class="container footer-content">
+            <p>&copy; 2026 effectivecharity.ai labs</p>
+            <p>Building tools for a better world.</p>
         </div>
     </footer>
 </body>
